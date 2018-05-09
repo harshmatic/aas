@@ -33,11 +33,11 @@ class App extends React.Component {
 
     const styles = {
       header: {
-        paddingLeft: navDrawerOpen ? paddingLeftDrawerOpen : 0
+        paddingLeft: navDrawerOpen ? paddingLeftDrawerOpen : 80
       },
       container: {
         margin: '80px 20px 20px 15px',
-        paddingLeft: navDrawerOpen && this.props.width !== SMALL ? paddingLeftDrawerOpen : 0
+        paddingLeft: navDrawerOpen && this.props.width !== SMALL ? paddingLeftDrawerOpen : 80
       }
     };
 

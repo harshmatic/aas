@@ -49,7 +49,8 @@ const LeftDrawer = (props) => {
   return (
     <Drawer
       docked={true}
-      open={navDrawerOpen}>
+      open={navDrawerOpen}
+      containerStyle={ navDrawerOpen?{transform: 'translate(0px, 0px)'} : {transform: 'translate(-160px, 0px)'}}>
         <div style={styles.logo}>
           Material Admin
         </div>
@@ -60,15 +61,21 @@ const LeftDrawer = (props) => {
           <span style={styles.avatar.span}>{props.username}</span>
         </div>
         <div>
-          {props.menus.map((menu, index) =>
-            <MenuItem
+        {navDrawerOpen?
+          props.menus.map((menu, index) =>
+           <MenuItem
               key={index}
               style={styles.menuItem}
-              primaryText={menu.text}
+              primaryText={navDrawerOpen?menu.text:''}
               leftIcon={menu.icon}
               containerElement={<Link to={menu.link}/>}
-            />
-          )}
+        />):props.menus.map((menu, index) =><MenuItem
+            key={index}
+            style={styles.menuItem}
+            rightIcon={menu.icon}
+            containerElement={<Link to={menu.link}/>}
+          />)
+          }
         </div>
     </Drawer>
   );

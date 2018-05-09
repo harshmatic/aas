@@ -14,7 +14,7 @@ class Breadcrumb extends React.Component {
         {inactive.map((item,i) => 
              {return(
                  <div key={i} style={{display:'flex'}}>
-             <Link to='/' activeClassName="inactiveBread">Home</Link>
+             <Link to='/' activeClassName="inactiveBread">{item}</Link>
              {len==i+1?<div  className="ico"><AvPlayCircleOutline color={blue500} /></div>:''}
              </div>
             )
