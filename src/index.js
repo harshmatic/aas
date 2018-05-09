@@ -1,0 +1,12 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import 'font-awesome/css/font-awesome.css';
+import 'flexboxgrid/css/flexboxgrid.css';
+injectTapEventPlugin();
+ReactDOM.render(<Router routes={routes} history={browserHistory} />, document.getElementById('root'));
+registerServiceWorker();
